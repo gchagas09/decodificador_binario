@@ -24,16 +24,18 @@ public class Binario {
 
     public boolean verificaDigitos(String valorBinario){
         int diferentes = 0;
-        
+        int valor;
         for (int i = 0; i< valorBinario.length(); i++){
-            String valor = String.valueOf(valorBinario.charAt(i));
-            if ( !(valor.equals("1")) &&  !(valor.equals("0"))){
+            
+            valor = valorBinario.charAt(i) - '0';
+            if ( valor<0 &&  valor>1){
                 diferentes++;
             }
-            System.out.println(valor);
-            System.out.println(diferentes);
-            System.out.println(valor.equals("1"));
-            System.out.println(valor.equals("0"));
+            System.out.println("Valor de i "+valorBinario.charAt(i));
+            System.out.println("Valor que valor deveria ter "+ valor);
+            System.out.println("Qt de diferentes:  "+diferentes);
+            //System.out.println(valor.equals("1"));
+            //System.out.println(valor.equals("0"));
             
         }
         if (diferentes>0){

@@ -11,7 +11,7 @@ public class Main {
         bits = scanner.nextInt();
 
         System.out.println("Informe um número binário: ");
-        binario = "1010";
+        binario = "1040";
         bin.configuraBinario(binario, bits);
         System.out.println(bin);
 
