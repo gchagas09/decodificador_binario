@@ -4,7 +4,11 @@ public class Binario {
     private String valor;
     private int qtdBits;
 
-    public Binario(String valor, int qtdBits) {
+    public String toString(){
+        return this.valor;
+    }
+
+    public void configuraBinario(String valor, int qtdBits) {
         Scanner in = new Scanner(System.in);
 
         this.qtdBits = qtdBits;
@@ -18,13 +22,19 @@ public class Binario {
         verificaBits(valor);
     }
 
-    private boolean verificaDigitos(String valorBinario){
+    public boolean verificaDigitos(String valorBinario){
         int diferentes = 0;
-        for (int i = 0; i<= valorBinario.length(); i++){
-            char valor = valorBinario.charAt(i);
-            if ( valor != "1" || valor !="0"){
+        
+        for (int i = 0; i< valorBinario.length(); i++){
+            String valor = String.valueOf(valorBinario.charAt(i));
+            if ( !(valor.equals("1")) &&  !(valor.equals("0"))){
                 diferentes++;
             }
+            System.out.println(valor);
+            System.out.println(diferentes);
+            System.out.println(valor.equals("1"));
+            System.out.println(valor.equals("0"));
+            
         }
         if (diferentes>0){
             return true;
