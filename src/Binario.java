@@ -18,7 +18,6 @@ public class Binario {
             valor = in.nextLine();
             in.nextLine();
         }
-
         verificaBits(valor);
     }
 
@@ -28,35 +27,37 @@ public class Binario {
         for (int i = 0; i< valorBinario.length(); i++){
             
             valor = valorBinario.charAt(i) - '0';
-            if ( valor<0 &&  valor>1){
+            if ( valor<0 || valor>1){
                 diferentes++;
-            }
-            System.out.println("Valor de i "+valorBinario.charAt(i));
-            System.out.println("Valor que valor deveria ter "+ valor);
-            System.out.println("Qt de diferentes:  "+diferentes);
-            //System.out.println(valor.equals("1"));
-            //System.out.println(valor.equals("0"));
-            
+            }            
         }
         if (diferentes>0){
             return true;
         }else{
             return false;
-        }
+        } 
     }
     //Método que verifica se a quantidade de bits no binário e igual a quantidade informada
     private void verificaBits(String valorBinario){
         //Se a quantidade for menor, concatena mais bits ao inicio do binario
-        if (valorBinario.length()<this.qtdBits){
-            int bits = this.qtdBits - valorBinario.length();
-            String bitsSomados = "0";
-            for(int i = 1; i <= bits; i++){
-                bitsSomados.concat("0");
-            }
-            bitsSomados.concat(valorBinario);
-
-            this.valor = bitsSomados;
+        System.out.println("//sout valorBinario: "+valorBinario);
+        if (valorBinario.length() < this.qtdBits){
+            valorBinario = somaBinario(valorBinario);
+        }else if(valorBinario.length()>this.qtdBits){
+            valorBinario = "<OVERFLOW: HÁ MAIS BITS DO QUE A ARQUITETURA SUPORTA>";
         }
+
+        this.valor = valorBinario;
+    }
+    private String somaBinario(String valorBinario){
+        int bits = this.qtdBits - valorBinario.length();
+            String bitsSomados = "0";
+
+            for(int i = 1; i < bits; i++){
+                bitsSomados = bitsSomados+"0";
+            }
+            valorBinario = bitsSomados+valorBinario;
+            return valorBinario;
     }
 
     public String getValor() {
