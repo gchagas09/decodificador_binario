@@ -13,15 +13,14 @@ public class Binario {
 
         this.qtdBits = qtdBits;
 
-        while (verificaDigitos(valor)){
+        while (this.verificaDigitos(valor)){
             System.out.print("Insira um valor BINARIO: ");
             valor = in.nextLine();
-            in.nextLine();
         }
         verificaBits(valor);
     }
 
-    public boolean verificaDigitos(String valorBinario){
+    public static boolean verificaDigitos(String valorBinario){
         int diferentes = 0;
         int valor;
         for (int i = 0; i< valorBinario.length(); i++){
@@ -40,11 +39,10 @@ public class Binario {
     //Método que verifica se a quantidade de bits no binário e igual a quantidade informada
     private void verificaBits(String valorBinario){
         //Se a quantidade for menor, concatena mais bits ao inicio do binario
-        System.out.println("//sout valorBinario: "+valorBinario);
         if (valorBinario.length() < this.qtdBits){
             valorBinario = somaBinario(valorBinario);
         }else if(valorBinario.length()>this.qtdBits){
-            valorBinario = "<OVERFLOW: HÁ MAIS BITS DO QUE A ARQUITETURA SUPORTA>";
+            valorBinario = null;
         }
 
         this.valor = valorBinario;
