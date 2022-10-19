@@ -1,5 +1,6 @@
 # decodificador_binario
 
+@authors: Gabriel Chagas, Lucas Vieira, Pedro Medronha
 College project, in wich the objective is create a binary decodificator of interger number, using two diferente binary notations:
 - Binary without signal;
 - Complement of 2
