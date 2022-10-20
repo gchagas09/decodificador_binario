@@ -16,6 +16,7 @@ public class View {
                 in.nextLine();
             } catch (Exception e) {
                 System.out.println("\n<INFORME UM VALOR INTEIRO MAIOR QUE ZERO>");
+                opt = -1;
                 in.nextLine();
             }
         }while(opt<0);
@@ -70,7 +71,7 @@ public class View {
     }
 
     public void tela(){
-        int opt =1;
+        int opt =0;
         menu();
         do{
             informaBinario();
