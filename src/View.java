@@ -34,6 +34,7 @@ public class View {
         System.out.printf("\nO valor binário %s, convertido para número decimal, equivale aos seguintes valores: ", binario.getValor());
         System.out.printf("\nBINÁRIO INTEIRO SEM SINAL: %d", decodificador.binarioSemSinal());
         System.out.printf("\nCOMPLEMENTO DE 2: %d", decodificador.complementoDois());
+        System.out.printf("\nUSANDO O MÉTODO Interger.parseInt(): %d", decodificador.binarioSemSinalParse(binario.getValor()));
         if (binario.getQtdBits()<=8){
             System.out.printf("\nCARACTERE REPRESENTADO PELO BINÁRIO: %s", decodificador.retornaAscii());
         }else{

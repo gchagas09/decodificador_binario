@@ -26,6 +26,10 @@ public class Decodificador {
         return valor;
     }
 
+    public int binarioSemSinalParse(String valorBinario){
+        return Integer.parseInt(valorBinario, 2);
+    }
+
     public int complementoDois(){
         int valor = 0;
         for (int i=0; i < (this.binarioInvertido.length() - 1 ); i++){
